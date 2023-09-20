@@ -1,14 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EmployeesTable from './components/employeesTable/EmployeesTable';
+import EmployeesProfile from './components/employeesTable/EmployeesProfile';
+import WeatherApiPage from "weatherApi/WeatherApiPage"
 
-import "./index.css";
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<EmployeesTable />} />
+          <Route path="/employee/:id" element={<EmployeesProfile />} />
+          <Route path="*" element={<div> <h1>Page Not Found</h1> </div>} />
+        </Routes>
+      </BrowserRouter>
+      {/* <WeatherApiPage /> */}
+    </>
+  )
+}
 
-const App = () => (
-  <div className="container">
-    <div>Name: mern-table</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-);
-ReactDOM.render(<App />, document.getElementById("app"));
+export default App

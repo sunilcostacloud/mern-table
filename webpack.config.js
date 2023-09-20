@@ -43,7 +43,10 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "mern_table",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        store: "store@http://localhost:8081/remoteEntry.js",
+        weatherApi: "weatherApi@http://localhost:8080/remoteEntry.js"
+      },
       exposes: {},
       shared: {
         ...deps,
