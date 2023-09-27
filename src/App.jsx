@@ -14,7 +14,7 @@ const App = () => {
           <Route path="*" element={<div> <h1>Page Not Found</h1> </div>} />
         </Routes>
       </BrowserRouter>
-      {/* <WeatherApiPage /> */}
+      <WeatherApiPage />
     </>
   )
 }
